@@ -1,0 +1,79 @@
+:root {
+  --primary-bg-color: #ffe3b0;
+  --primary-accent: #ffcece;
+  --secondary-accent: #ffc1c8;
+  --baby-blue: #8ed6ff;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #ffe3b0;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1.3rem;
+}
+body {
+  margin: 2rem;
+}
+.spreadsheet-container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
+
+.row-header,
+.col-header,
+.corner-spacer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-accent);
+  border: 1px solid #d4a3a3;
+  font-size: 0.85rem;
+  font-weight: 600;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* Row number box width */
+.row-header,
+.corner-spacer {
+  width: 50px;
+  height: 32px;
+}
+
+/* Column header & cell width must match */
+.col-header,
+.cell {
+  width: 110px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.cell {
+  border: 1px solid #ccc;
+  padding: 0 6px;
+  font-size: 0.9rem;
+  background-color: #fff;
+}
+
+.cell:focus {
+  outline: 2px solid var(--baby-blue);
+  z-index: 1;
+}
