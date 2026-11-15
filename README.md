@@ -1,17 +1,25 @@
-# React + Vite
+# Spreadsheet
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Site: https://spreadsheets-are-fun.netlify.app/
 
-Currently, two official plugins are available:
+A web app focused on building a dynamic spreadsheet with read write to files on fedora to privately store spreadsheets.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Toolbar features
 
-## React Compiler
+File & Sync: New, Open, Save, and an Auto-save switch (a toggle state rather than a one-off click action).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+History: Undo, Redo.
 
-## Expanding the Oxlint configuration
+Font & Color: Font family, Font size, Bold, Italic, Underline, Strikethrough, Text color, and Cell fill (background) color.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
-# spreadsheet
+Alignment: Horizontal align (Left, Center, Right), Vertical align (Top, Middle, Bottom), Increase/Decrease indent, and Text wrap.
+
+Borders: Border style/placement (All borders, Bottom border, Clear borders).
+
+Numbers & Formulas:
+
+    Quick Functions: A dropdown or button defaulting to SUM (with options like AVERAGE, COUNT, MIN, MAX).
+
+    Number Formats: Currency ($), Percentage (%), and Increase/Decrease decimal places.
+
+    Reset: Clear formatting (essential when users paste messy text).

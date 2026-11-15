@@ -1,0 +1,115 @@
+/* --- TOOLBAR LAYOUT --- */
+.toolbar {
+  margin: 1rem 0 0 0;
+  padding: 6px 12px;
+  background-color: var(--secondary-accent);
+  border-top: 4px solid var(--baby-blue);
+  border-bottom: 1px solid #d4a3a3;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Menu row (File, Borders) & Action row (Icons) */
+.toolbar-menu-row,
+.toolbar-buttons-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 100%;
+}
+
+.toolbar-menu-row {
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* --- VERTICAL SEPARATORS --- */
+[role="separator"][aria-orientation="vertical"] {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0 6px;
+  flex-shrink: 0;
+}
+
+/* --- TOOLBAR BUTTONS --- */
+.toolbar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 4px 7px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.toolbar button:hover {
+  background-color: rgba(255, 255, 255, 0.55);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.toolbar button:active,
+.toolbar button[aria-pressed="true"],
+.toolbar button[aria-expanded="true"] {
+  background-color: var(--baby-blue);
+  border-color: #5bb8f0;
+}
+
+/* Font size readout between - and + */
+.font-size-display {
+  min-width: 26px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background-color: #fff;
+  border: 1px solid #d4a3a3;
+  border-radius: 4px;
+  padding: 2px 4px;
+  user-select: none;
+}
+
+/* --- DROPDOWN MENUS --- */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 150px;
+  background-color: #fff;
+  border: 1px solid #d4a3a3;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 100;
+}
+
+.dropdown-menu button {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.dropdown-menu button:hover {
+  background-color: var(--primary-bg-color);
+}

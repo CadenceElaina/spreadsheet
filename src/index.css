@@ -21,7 +21,7 @@ html {
   font-size: 1.3rem;
 }
 body {
-  margin: 2rem;
+  margin: 0 1rem;
 }
 .spreadsheet-container {
   display: flex;
@@ -76,4 +76,29 @@ body {
 .cell:focus {
   outline: 2px solid var(--baby-blue);
   z-index: 1;
+}
+
+.toolbar {
+  margin: 1rem 0 0 0;
+  background-color: var(--secondary-accent);
+  border-top: 4px solid var(--baby-blue);
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /*
+  flex-direction: row;
+  flex-wrap: wrap;
+  */
+}
+.toolbar-group-top {
+  width: 100%;
+}
+
+.toolbar-group-top span {
+  flex: 1;
+}
+.toolbar-group {
+  flex: 1;
 }
