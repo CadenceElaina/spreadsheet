@@ -1,16 +1,34 @@
 import React from "react";
 import Dropdown from "./Dropdown";
 import ToolbarButtons from "./ToolbarButtons";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { calculateSum } from "./spreadsheetHelpers";
 
 const Toolbar = () => {
   const [openMenu, setOpenMenu] = useState(null);
   const toolbarRef = useRef(null);
+
   const toggleMenu = (menuName) => {
     setOpenMenu((prev) => (prev === menuName ? null : menuName));
   };
 
+  // make this a hook by wrapping it in a function
+  /*move this to hooks 
+Close the open menu when the mouse is pressed outside the menu group. mousedown, not click, so it runs before a menu button's onClick toggles it.
+  */
+  useEffect(() => {
+    if (openMenu === null) return;
+
+    const handleClickOutside = (e) => {
+      if (toolbarRef.current && !toolbarRef.current.contains(e.target)) {
+        setOpenMenu(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openMenu]);
   //  DROPDOWN HANDLERS
   const handleNewFile = () => {
     // open menu for user to enter name location
@@ -30,6 +48,7 @@ const Toolbar = () => {
         role="group"
         aria-label="Text formatting"
         className="toolbar-group-top"
+        ref={toolbarRef}
       >
         <Dropdown
           label="File"
