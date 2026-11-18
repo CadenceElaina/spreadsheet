@@ -17,16 +17,14 @@ const Spreadsheet = () => {
 
   const spreadsheetRows = Array.from({ length: rows }, (_, rowIndex) => {
     return (
-      <>
-        <div className="row" key={rowIndex}>
-          <div className="row-header">{rowIndex + 1}</div>
-          {Array.from({ length: cols }, (_, colIndex) => {
-            return (
-              <input type="text" className="cell" name="cell" key={colIndex} />
-            );
-          })}
-        </div>
-      </>
+      <div className="row" key={rowIndex}>
+        <div className="row-header">{rowIndex + 1}</div>
+        {Array.from({ length: cols }, (_, colIndex) => {
+          return (
+            <input type="text" className="cell" name="cell" key={colIndex} />
+          );
+        })}
+      </div>
     );
   });
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Dropdown from "./Dropdown";
 import ToolbarButtons from "./ToolbarButtons";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { calculateSum } from "./spreadsheetHelpers";
 
 const Toolbar = () => {
@@ -62,21 +62,6 @@ const Toolbar = () => {
         className="toolbar-group-top"
       >
         <ToolbarButtons />
-      </div>
-      <div role="group" aria-label="Text formatting" className="toolbar-group">
-        1
-      </div>
-      <div role="separator" aria-orientation="vertical" />
-      <div role="group" aria-label="Text formatting" className="toolbar-group">
-        1
-      </div>
-      <div role="separator" aria-orientation="vertical" />
-      <div role="group" aria-label="Text formatting" className="toolbar-group">
-        1
-      </div>
-      <div role="separator" aria-orientation="vertical" />
-      <div role="group" aria-label="Text formatting" className="toolbar-group">
-        1
       </div>
     </div>
   );
